@@ -12,7 +12,9 @@
 % OUTPUTS:
 % status == 1 for sucess and 0 for failure
 % direct output of 2D plot to screen, of str interpreted with Turtle Graphics
-%
+% saves the figure to a folder "figures" in parent directory. The folder
+% must exist 
+
 % sample test call: DrawFractal(1,1, 27.5,Eaxiom)
 % original code at http://courses.cit.cornell.edu/bionb441/LSystem/index.html
 % modified by Ali Javed and Josh Minot Jan-29-2018
@@ -44,6 +46,12 @@ hold on
 
 for i=1:length(Eaxiom)
     cmdT = Eaxiom(i);
+    %if it is a number, continue
+    if str2num(cmdT)>-1 & str2num(cmdT)<10
+        continue
+    end
+    
+    
     switch cmdT
     case 'F'
         stackRow = drawPath(stackRow, [.3 .3 0],lenF);
@@ -71,17 +79,21 @@ for i=1:length(Eaxiom)
     case ']' %pop the stack
         stkPtr = stkPtr -1 ;
         stackRow = stackRows(stkPtr);
+    
         
-        otherwise %any unhandled case
-        disp('error')
-        return
+    otherwise %any unhandled case
+            
+            fprintf('Error: Do not understand character %s\n',cmdT)
+            return
     end
 end
 
 axis equal
-figure(gcf)
+fig = figure(gcf)
+title('Fractal by Ali Javed and Josh Minot')
 
 %save the figure with title here
+savefig(fig,'../figures/Fractal by Ali Javed and Josh Minot.fig','compact')
 
 %set status to 1 as sucessful
 status = 1;
