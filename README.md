@@ -1,12 +1,10 @@
 # CS302HW1
 Home Work 1 code for CS302
 
-
-
-Pending tasks:
+Completed
 Creating header for each function and each file. I think we both can do that independently. It needs to be like the format in appendix. Please read the appendix, to understand commenting. -   Done. Feel free to go over it and ensure its correctness.
 
-
+Pending tasks:
 Think of a real work fractal. 
 
 Save each figure made add title to it that includes our name.
