@@ -6,7 +6,7 @@
 
 %this is the main script that call required functions
 
-function status = Lsystem(delta, axiom, nReps, rules,lenF,lenB)
+function [status,DrawFractalFigure] = Lsystem(delta, axiom, nReps, rules,lenF,lenB)
 %%
 %initilize status to 0 and get number of rules
 status = 0;
@@ -26,7 +26,7 @@ end
 
 %%
 %plot L-system
-DrawFractalstatus = DrawFractal(lenF,lenB, delta, expanded_axiom);
+[DrawFractalFigure,DrawFractalstatus] = DrawFractal(lenF,lenB, delta, expanded_axiom);
 
 if DrawFractalstatus == 0
     disp("Draw fractal did not return sucessfully.. please check")
@@ -35,8 +35,9 @@ else
 end
 
 %%
-%return a sucessful status
+%return a sucessful status and return figure
 status = 1;
+
 
 end
 

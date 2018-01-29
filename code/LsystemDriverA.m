@@ -26,7 +26,7 @@ rules(1).after = 'F[-F]F[+F]F'
 
 %call LSystem
 
-status = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB);
+[status,fig] = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB);
 
 %check for sucess status
 if status ==1
@@ -35,6 +35,10 @@ else
     disp("LSystem Weed Fractal - 1 did not work as expected... exiting");
 
 end
+
+%save the figure with title here
+savefig(fig,'../figures/Weed-1 Fractal by Ali Javed and Josh Minot.fig','compact')
+
 
 %%
 %TASK 2
@@ -60,15 +64,18 @@ rules(1).after = 'F17-F34+F17-F'
 
 %call LSystem
 
-status = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB);
+[status,fig] = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB);
 
 %check for sucess status
 if status ==1
-    disp("LSystem Square Spikes Fractal Sucessful... exiting");
+    disp("LSystem Square-Spikes Sucessful... exiting");
 else
-    disp("LSystem Square Spikes Fractal did not work as expected... exiting");
+    disp("LSystem Square-Spikes did not work as expected... exiting");
 
 end
+
+%save the figure with title here
+savefig(fig,'../figures/Square-Spikes Fractal by Ali Javed and Josh Minot.fig','compact')
 
 
 %%

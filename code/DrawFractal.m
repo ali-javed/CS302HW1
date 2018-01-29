@@ -10,7 +10,7 @@
 
 %
 % OUTPUTS:
-% status == 1 for sucess and 0 for failure
+% figure for saving 
 % direct output of 2D plot to screen, of str interpreted with Turtle Graphics
 % saves the figure to a folder "figures" in parent directory. The folder
 % must exist 
@@ -23,11 +23,9 @@
 
 %%
 
-function status = DrawFractal(lenF,lenB, delta,Eaxiom)
-
-%set status to 0 as default indicating failure
+function [fig,status] = DrawFractal(lenF,lenB, delta,Eaxiom)
+%initilize status to 0
 status = 0;
-
 
 %pre allocate stack rows
 stackRows(100000) = struct('xT',0,'yT',0,'aT',0)
@@ -92,11 +90,8 @@ axis equal
 fig = figure(gcf)
 title('Fractal by Ali Javed and Josh Minot')
 
-%save the figure with title here
-savefig(fig,'../figures/Fractal by Ali Javed and Josh Minot.fig','compact')
 
-%set status to 1 as sucessful
-status = 1;
+status = 1
 
 end
 %%
