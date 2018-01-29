@@ -1,16 +1,21 @@
-%Created By Ali Javed and Josh
-%Class Project1 CS302 - Modeling Complex Systems
-%Date Jan-26-2018
-%ali.javed@uvm.edu
-%jminot@uvm.edu
-%INPUT 
-%rules in format rule.before rule.after
-%axiom
-%depth to iterate to as nReps
-%total number of rules present as nRules
-%returns the expanded axiom
+% DrawFractal.m: expand and axiom using a rule set and number of iterations
+% function expanded_axiom = Iterate(rule, axiom, nReps, nRules)
+%
+% INPUTS:
+% rule == array of rules. e.g. rule(1).before and rule(1).after
+% axiom == starting point of factral
+% nReps == Number of times to repeat
+% nRules == number of rules
 
+%
+% OUTPUTS:
+% expanded_axiom == the expanded factral
+% sample test call: DrawFractal(rule,'B', 3,length(rules))
+% original code at http://courses.cit.cornell.edu/bionb441/LSystem/index.html
+% modified by Ali Javed and Josh Minot Jan-29-2018
+% Class Project1 CS302 - Modeling Complex Systems
 
+%%
 
 function expanded_axiom = Iterate(rule, axiom, nReps, nRules)
 expanded_axiom = axiom
