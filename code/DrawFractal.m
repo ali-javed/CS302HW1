@@ -43,7 +43,7 @@ for i=1:length(Eaxiom)
     switch cmdT
     case 'F'
         stackRow = drawPath(stackRow, [.3 .3 0],lenF);
-        %stackRow = drawPath(stackRow, 'g',lenB)
+       
         
      
     case 'B'
