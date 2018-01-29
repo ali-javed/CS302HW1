@@ -1,29 +1,32 @@
-%Created By Ali Javed
-%Class Project1 CS302 - Modeling Complex Systems
-%Date Jan-26-2018
-%ali.javed@uvm.edu
-%jminot@uvm.edu
+% DrawFractal.m: Draw an already expanded L-system string using Turtle Graphics
+% function status = DrawFractal(lenF,lenB, delta,Eaxiom)
+%
+% INPUTS:
+% lenF == length of segment to draw for F
+% lenB == length of segment to draw for B
+% delta == The angle at which the turtule turns on a + (for any number that
+% preceeds + angle is multiplied by that number)
+% Eaxiom = The expanded axiom\factral that needs to be drawn
 
-%This function read the rule file in specied format from data directory
-%INPUT 
-%factral
-%lenBth of the base line segments corresponding to the symbols F and B as
-%lenF and lenB
+%
+% OUTPUTS:
+% status == 1 for sucess and 0 for failure
+% direct output of 2D plot to screen, of str interpreted with Turtle Graphics
+%
+% sample test call: DrawFractal(1,1, 27.5,Eaxiom)
+% original code at http://courses.cit.cornell.edu/bionb441/LSystem/index.html
+% modified by Ali Javed and Josh Minot Jan-29-2018
+% Class Project1 CS302 - Modeling Complex Systems
 
-%OUTPUT
-%plot that draws the factral
 
-
+%%
 
 function status = DrawFractal(lenF,lenB, delta,Eaxiom)
 
-% Now draw the string as turtle graphics
-%Upper case (e.g. F or G) causes a line to be drawn in the current direction of the turtle
-%Lower case causes a move with no draw
-%angle +operator means turn left; -operator means turn right
-
-%set status to 0
+%set status to 0 as default indicating failure
 status = 0;
+
+
 %pre allocate stack rows
 stackRows(100000) = struct('xT',0,'yT',0,'aT',0)
 
@@ -36,6 +39,7 @@ da = deg2rad(delta)
 %init the turtle stack
 stkPtr = 1;
 
+%use the same figure
 hold on
 
 for i=1:length(Eaxiom)
@@ -43,22 +47,20 @@ for i=1:length(Eaxiom)
     switch cmdT
     case 'F'
         stackRow = drawPath(stackRow, [.3 .3 0],lenF);
-       
         
      
     case 'B'
         stackRow = drawPath(stackRow, 'g',lenB);
       
-    case '+'
+    case '+' %right hand turns
         
         turns = extractNumber(Eaxiom,i);
-        %clarify on this 
         rads = da*turns;
         stackRow.aT = stackRow.aT + rads;
         
  
         
-    case '-'
+    case '-' %left hand turns
         turns = extractNumber(Eaxiom,i);
         rads = da*turns;
         stackRow.aT = stackRow.aT - rads;
@@ -70,7 +72,7 @@ for i=1:length(Eaxiom)
         stkPtr = stkPtr -1 ;
         stackRow = stackRows(stkPtr);
         
-    otherwise
+        otherwise %any unhandled case
         disp('error')
         return
     end
@@ -79,10 +81,29 @@ end
 axis equal
 figure(gcf)
 
+%save the figure with title here
+
 %set status to 1 as sucessful
 status = 1;
 
 end
+%%
+
+%This function draws a path given a stackRow object length of segment and
+%color
+%INPUTS
+%stackRow Object
+%stackRow.xT == x-axis;
+%stackRow.yT = y-axis;
+%stackRow.aT = angle;
+
+%colorVal == the color of line segmant drawn
+%len == length of line segmant drawn
+
+%OUTPUT
+%direct output of 2D plot to screen of line segment drawn.
+
+%sample call drawPath(stackRow, 'g',1)
 
 function [stackRow] = drawPath(stackRow, colorVal,len)
 
@@ -95,6 +116,16 @@ function [stackRow] = drawPath(stackRow, colorVal,len)
 end
 
 
+%%
+%This function extracts a number given a string and an index before which
+%to extract the number. The index should have a number in th epreceeding
+%index
+
+%INPUTS 
+%Eaxiom == any factral string for example 'FF32+B'
+%i == index, has to be index of + or -.
+
+%sample call extractNumber('FF32+B,5)
 
 function turns = extractNumber(Eaxiom,i)
         mul = 1;
@@ -116,3 +147,4 @@ function turns = extractNumber(Eaxiom,i)
         end
 
 end
+
