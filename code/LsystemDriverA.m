@@ -44,6 +44,7 @@ savefig(fig,'../figures/Weed-1 Fractal by Ali Javed and Josh Minot.fig','compact
 %TASK 2
 %house keeping
 clear all
+figure
 
 
 
