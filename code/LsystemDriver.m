@@ -1,4 +1,5 @@
-
+%%FOR TESTING AND PLAYING ONLY. 
+%We have to submit LsystemDriverA for part A of this assignment. 
 
 %%
 %house keeping
