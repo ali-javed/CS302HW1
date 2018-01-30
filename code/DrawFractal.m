@@ -147,6 +147,10 @@ function turns = extractNumber(Eaxiom,i)
                 turns = turns +temp_num;
                 k = k -1;
                 mul = mul*10;
+                %break loop if k becomes 0
+                if k<1
+                    break
+                end
             end
         end
         %make more elegant
