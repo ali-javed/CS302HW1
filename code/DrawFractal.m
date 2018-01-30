@@ -54,10 +54,9 @@ for i=1:length(Eaxiom)
     case 'F'
         stackRow = drawPath(stackRow, [.3 .3 0],lenF);
         
-     
     case 'B'
         stackRow = drawPath(stackRow, 'g',lenB);
-      
+        
     case '+' %right hand turns
         
         turns = extractNumber(Eaxiom,i);

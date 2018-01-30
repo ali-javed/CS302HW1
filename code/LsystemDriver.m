@@ -10,20 +10,20 @@ clc
 %%
 
 %Declare parameters
-Delta = 27.5
+Delta = 18
 nReps = 3
-Axiom = 'B'
+Axiom = 'F'
 
 lenF = 1
-lenB = 1
+lenB = 0.5
 
 
 %Rules
-rules(1).before = 'B'
-rules(1).after = 'F[-B]+B'
+%rules(1).before = 'B'
+%rules(1).after = 'F[-B]+B'
 
-rules(2).before = 'F'
-rules(2).after = 'FF'
+rules(1).before = 'F'
+rules(1).after = '[2-B]4-BFB[+3B]'
 %end Rules
 
 
