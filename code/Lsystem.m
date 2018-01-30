@@ -1,11 +1,26 @@
-%Created By Ali Javed and Josh
-%Class Project1 CS302 - Modeling Complex Systems
-%Date Jan-26-2018
-%ali.javed@uvm.edu
-%jminot@uvm.edu
+% LSystem.m: Calls two subfunctions to 1) expand the 2) draw the figure
+% function [status,DrawFractalFigure] = Lsystem(delta, axiom, nReps, rules,lenF,lenB)
+%
+% INPUTS:
+% delta == default angle for rotation
+% axiom == axiom/ start of fractal
+% nReps == number of iterations for expanding the axiom
+% rules == rules for expansion
+% lenF == lenght of line segment drawn when F is encountered
+% lenB == length of line segment drawn when B is encountered
 
-%this is the main script that call required functions
+%
+% OUTPUTS:
+% status == 0 for failure, 1 for sucess 
+% DrawFractalFigure == returns the figure, incase it needs to be saved or
+% used somewhere else
 
+% sample test call: Lsystem(90, 'B', 3, rules,1,1)
+% original code at http://courses.cit.cornell.edu/bionb441/LSystem/index.html
+% modified by Ali Javed and Josh Minot Jan-29-2018
+% Class Project1 CS302 - Modeling Complex Systems
+
+%%
 function [status,DrawFractalFigure] = Lsystem(delta, axiom, nReps, rules,lenF,lenB)
 %%
 %initilize status to 0 and get number of rules
