@@ -103,7 +103,6 @@ end
 %stackRow.xT == x-axis;
 %stackRow.yT = y-axis;
 %stackRow.aT = angle;
-
 %colorVal == the color of line segmant drawn
 %len == length of line segmant drawn
 
@@ -125,13 +124,15 @@ end
 
 %%
 %This function extracts a number given a string and an index before which
-%to extract the number. The index should have a number in th epreceeding
+%to extract the number. The index should have a number in the preceeding
 %index
 
 %INPUTS 
 %Eaxiom == any factral string for example 'FF32+B'
 %i == index, has to be index of + or -.
 
+%OUTPUT
+%turns == the number preceeding + or -
 %sample call extractNumber('FF32+B,5)
 
 function turns = extractNumber(Eaxiom,i)
