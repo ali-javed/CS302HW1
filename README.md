@@ -9,9 +9,12 @@ Reproduce square spike fractal shown in figure 6.9.
 LSystemA should generate all these figures (refer to assignment point 4).
 
 
-Pending tasks:
-Think of a real work fractal.  - How about lightning? 
+Partially complete tasks:
+Think of a real work fractal.  - How about lightning? I made a draft for that, seems ok to me. 
+
+Pending taks:
 We need to look over segments of code to improve it more in terms of efficiency if possible. Still a lot of possibilities. - Any suggestions? We probably need to identify 1 or 2 more improvements, so far we only did the absolute necessary Maggie mentioned in class.
+
 Also, in the end, update readme with instructions :)
 
 
