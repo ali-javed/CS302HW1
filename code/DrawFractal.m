@@ -7,7 +7,8 @@
 % delta == The angle at which the turtule turns on a + (for any number that
 % preceeds + angle is multiplied by that number)
 % Eaxiom = The expanded axiom\factral that needs to be drawn
-%
+% colF == color value for line segment F
+% colB == color value for line segment B
 %
 % OUTPUTS:
 % figure for saving 
@@ -24,7 +25,7 @@
 
 %%
 
-function [fig,status] = DrawFractal(lenF,lenB, delta,Eaxiom)
+function [fig,status] = DrawFractal(lenF,lenB,colF,colB, delta,Eaxiom)
 %initilize status to 0
 status = 0;
 
@@ -53,10 +54,10 @@ for i=1:length(Eaxiom)
     
     switch cmdT
     case 'F'
-        stackRow = drawPath(stackRow, [.3 .3 0],lenF);
+        stackRow = drawPath(stackRow, colF,lenF);
         
     case 'B'
-        stackRow = drawPath(stackRow, 'g',lenB);
+        stackRow = drawPath(stackRow, colB,lenB);
         
     case '+' %right hand turns
         
@@ -88,6 +89,9 @@ end
 
 axis equal
 fig = figure(gcf)
+if colF == 'b'
+    set(gca, 'Color','k')
+end
 title('Fractal by Ali Javed and Josh Minot')
 
 

@@ -8,7 +8,8 @@
 % rules == rules for expansion
 % lenF == lenght of line segment drawn when F is encountered
 % lenB == length of line segment drawn when B is encountered
-%
+% colF == color value for line segment F
+% colB == color value for line segment B
 %
 % OUTPUTS:
 % status == 0 for failure, 1 for sucess 
@@ -22,7 +23,7 @@
 % Class Project1 CS302 - Modeling Complex Systems
 
 %%
-function [status,DrawFractalFigure] = Lsystem(delta, axiom, nReps, rules,lenF,lenB)
+function [status,DrawFractalFigure] = Lsystem(delta, axiom, nReps, rules,lenF,lenB,colF,colB)
 %%
 %initilize status to 0 and get number of rules
 status = 0;
@@ -42,7 +43,7 @@ end
 
 %%
 %plot L-system
-[DrawFractalFigure,DrawFractalstatus] = DrawFractal(lenF,lenB, delta, expanded_axiom);
+[DrawFractalFigure,DrawFractalstatus] = DrawFractal(lenF,lenB,colF,colB, delta, expanded_axiom);
 
 if DrawFractalstatus == 0
     disp("Draw fractal did not return sucessfully.. please check")

@@ -22,6 +22,9 @@ Axiom = 'F'
 lenF = 1
 lenB = 1
 
+colF = [.3 .3 0]
+colB = 'g'
+
 
 %Rules
 rules(1).before = 'F'
@@ -31,7 +34,7 @@ rules(1).after = 'F[-F]F[+F]F'
 
 %call LSystem
 
-[status,fig] = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB);
+[status,fig] = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB,colF,colB);
 
 %check for sucess status
 if status ==1
@@ -61,6 +64,8 @@ Axiom = 'F18-F18-F18-F'
 lenF = 1
 lenB = 1
 
+colF = [.3 .3 0]
+colB = 'g'
 
 %Rules
 rules(1).before = 'F'
@@ -70,7 +75,7 @@ rules(1).after = 'F17-F34+F17-F'
 
 %call LSystem
 
-[status,fig] = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB);
+[status,fig] = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB,colF,colB);
 
 %check for sucess status
 if status ==1
@@ -93,7 +98,6 @@ clear all
 figure
 
 
-
 %Find something from the real world... i am trying to make an axiom for
 %lightning.. we will continue when we meet, just wanted to play
 Delta = 18
@@ -103,6 +107,8 @@ Axiom = 'F'
 lenF = 1
 lenB = 0.5
 
+colF = 'b'
+colB = 'b'
 
 %Rules
 rules(1).before = 'F'
@@ -114,7 +120,7 @@ rules(1).after = '[2-B]4-BFB[+3B]'
 
 %call LSystem
 
-[status,fig] = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB);
+[status,fig] = Lsystem(Delta, Axiom, nReps, rules, lenF, lenB, colF,colB);
 
 %check for sucess status
 if status ==1
