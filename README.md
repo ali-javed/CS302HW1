@@ -2,20 +2,18 @@
 Home Work 1 code for CS302
 
 Completed
-Creating header for each function and each file. It needs to be like the format in appendix. Please read the appendix, to understand commenting. -   Done. Feel free to go over it and ensure its correctness. Will need more improvement.
-Save each figure made add title to it that includes our name.
+Made code improvements (optmizations) like pre-allocations, getting rid for unnecessary for loops. This is the best code in the history of all codes ever.
+Converted to functions and made a hierarchy as mentioned in HW. LsystemDriverA ->Lsystem -> Iterate/Draw.
+Creating header for each function and each file. 
+Make color as a parameter so we can have lightning as blue, branches as brown and leaves as green without internal modicifaction.
+Set background for lightning as black. 
+Save each figure made with names as title.
 Reproduce Weed-1 fractal in figure 6.5.
 Reproduce square spike fractal shown in figure 6.9.
-LSystemA should generate all these figures (refer to assignment point 4).
+Produce a lightning bolt fractal.
+LsystemDriverA is non interactive.
 
 
-Partially complete tasks:
-Think of a real work fractal.  - How about lightning? I made a draft for that, seems ok to me. 
-
-Pending taks:
-We need to look over segments of code to improve it more in terms of efficiency if possible. Still a lot of possibilities. - Any suggestions? We probably need to identify 1 or 2 more improvements, so far we only did the absolute necessary Maggie mentioned in class.
-
-Also, in the end, update readme with instructions :)
 
 
 
