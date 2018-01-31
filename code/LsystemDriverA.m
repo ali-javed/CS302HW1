@@ -1,5 +1,10 @@
+%Script file to call L-system function and initate the generation of turtle
+%graphics based on the rules defined in this file. 
 
-
+%AUTHORS: Ali Javed and Josh Minot, Jan-29-2018
+%Class Project1 CS302 - Modeling Complex Systems
+%
+%
 %%
 %house keeping
 clear all

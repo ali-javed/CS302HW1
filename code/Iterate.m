@@ -6,11 +6,12 @@
 % axiom == starting point of factral
 % nReps == Number of times to repeat
 % nRules == number of rules
-
+%
 %
 % OUTPUTS:
 % expanded_axiom == the expanded factral
 % sample test call: DrawFractal(rule,'B', 3,length(rules))
+
 % original code at http://courses.cit.cornell.edu/bionb441/LSystem/index.html
 % modified by Ali Javed and Josh Minot Jan-29-2018
 % Class Project1 CS302 - Modeling Complex Systems

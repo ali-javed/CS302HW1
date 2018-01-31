@@ -7,15 +7,16 @@
 % delta == The angle at which the turtule turns on a + (for any number that
 % preceeds + angle is multiplied by that number)
 % Eaxiom = The expanded axiom\factral that needs to be drawn
-
+%
 %
 % OUTPUTS:
 % figure for saving 
 % direct output of 2D plot to screen, of str interpreted with Turtle Graphics
 % saves the figure to a folder "figures" in parent directory. The folder
 % must exist 
-
+%
 % sample test call: DrawFractal(1,1, 27.5,Eaxiom)
+
 % original code at http://courses.cit.cornell.edu/bionb441/LSystem/index.html
 % modified by Ali Javed and Josh Minot Jan-29-2018
 % Class Project1 CS302 - Modeling Complex Systems
