@@ -19,7 +19,7 @@
 %%
 
 function expanded_axiom = Iterate(rule, axiom, nReps, nRules)
-expanded_axiom = axiom
+expanded_axiom = axiom;
 for i=1:nReps
     
     %one character/cell, with indexes the same as original axiom string

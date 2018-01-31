@@ -89,9 +89,11 @@ end
 
 axis equal
 fig = figure(gcf)
+%special case to make background black for lightning bolt
 if colF == 'b'
     set(gca, 'Color','k')
 end
+%set title
 title('Fractal by Ali Javed and Josh Minot')
 
 
@@ -129,26 +131,38 @@ end
 %%
 %This function extracts a number given a string and an index before which
 %to extract the number. The index should have a number in the preceeding
-%index
+%index. 
 
 %INPUTS 
 %Eaxiom == any factral string for example 'FF32+B'
-%i == index, has to be index of + or -.
+%i == index, has to be index of + or - within the string.
 
 %OUTPUT
 %turns == the number preceeding + or -
 %sample call extractNumber('FF32+B,5)
 
 function turns = extractNumber(Eaxiom,i)
+        %mul is set to 1 for first digit, 10 for second...
         mul = 1;
+        %index of preceding + or -
         k =i-1;
+        
         temp_num = 0;
+        %number extracted
         turns = 0;
+   
+            
+        %if the + or - is the first one then dont run the loop.
         if i ~= 1
+            %to make sure that we have a number at current index
             while (((Eaxiom(k)-'0')<10) & ((Eaxiom(k)-'0')>-1))
+                %convert to number, can also subtract character 0
                 temp_num = str2num(Eaxiom(k));
+                %based on the extracted digit multiply it by, 0, 10,100...
                 temp_num = temp_num*mul;
+                
                 turns = turns +temp_num;
+                %check previous index.
                 k = k -1;
                 mul = mul*10;
                 %break loop if k becomes 0
